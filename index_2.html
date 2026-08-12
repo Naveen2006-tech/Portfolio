@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naveena K | ECE Student | VLSI &amp; RTL Design Enthusiast</title>
+<meta name="description" content="Professional portfolio of Naveena K, an Electronics and Communication Engineering student passionate about VLSI, RTL Design, Verilog HDL, FPGA, and Digital Electronics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2545;
+    --navy-2:#123566;
+    --blue:#1D5FA8;
+    --blue-light:#EAF1FA;
+    --ink:#1F2430;
+    --grey:#5B6472;
+    --grey-light:#8A93A1;
+    --border:#E7EAEF;
+    --bg:#FFFFFF;
+    --bg-alt:#F8FAFC;
+    --radius:12px;
+    --display:'Manrope', sans-serif;
+    --body:'Inter', sans-serif;
+    --shadow: 0 1px 2px rgba(11,37,69,0.04), 0 8px 24px rgba(11,37,69,0.06);
+    --danger:#C0392B;
+    --success:#1E8E5A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  section{padding:96px 0;}
+  @media(max-width:700px){section{padding:64px 0;}}
+
+  .eyebrow{
+    font-family:var(--display);font-size:13px;font-weight:700;
+    color:var(--blue);letter-spacing:.08em;text-transform:uppercase;
+    margin-bottom:12px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:'';width:22px;height:2px;background:var(--blue);display:inline-block;}
+  .eyebrow-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  h2.section-title{
+    font-family:var(--display);font-weight:800;font-size:clamp(26px,3.4vw,36px);
+    color:var(--navy);margin-bottom:14px;letter-spacing:-0.01em;
+  }
+  .section-sub{color:var(--grey);max-width:600px;margin-bottom:48px;font-size:15.5px;}
+
+  .fade-in{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+
+  /* ---------- NAVBAR ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+    transition:box-shadow .25s ease;
+  }
+  header.nav.scrolled{box-shadow:0 2px 16px rgba(11,37,69,0.06);}
+  .nav-inner{
+    max-width:1180px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{font-family:var(--display);font-weight:800;font-size:18px;color:var(--navy);letter-spacing:-0.01em;}
+  .brand span{color:var(--blue);}
+  .nav-links{display:flex;gap:28px;font-size:14px;font-weight:600;color:var(--grey);}
+  .nav-links a{position:relative;padding:4px 0;transition:color .2s;}
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--blue);
+    transition:width .2s ease;
+  }
+  .nav-links a:hover{color:var(--navy);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    font-family:var(--display);font-weight:700;font-size:13.5px;color:#fff;
+    background:var(--navy);padding:10px 20px;border-radius:8px;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .nav-cta:hover{background:var(--blue);transform:translateY(-1px);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;}
+  .hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.25s;}
+  .mobile-menu{
+    display:none;flex-direction:column;gap:2px;
+    background:#fff;border-top:1px solid var(--border);
+    padding:8px 24px 18px;
+  }
+  .mobile-menu a{
+    padding:12px 0;font-size:15px;font-weight:600;color:var(--ink);
+    border-bottom:1px solid var(--border);
+  }
+  .mobile-menu.open{display:flex;}
+  @media(max-width:860px){
+    .nav-links,.nav-cta{display:none;}
+    .hamburger{display:flex;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:110px 0 90px;background:linear-gradient(180deg, var(--bg-alt) 0%, #fff 100%);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--blue-light);color:var(--blue);
+    font-family:var(--display);font-weight:700;font-size:12.5px;
+    padding:7px 14px;border-radius:20px;margin-bottom:22px;letter-spacing:.02em;
+  }
+  .hero h1{
+    font-family:var(--display);font-weight:800;font-size:clamp(34px,4.6vw,50px);
+    color:var(--navy);line-height:1.12;letter-spacing:-0.015em;
+  }
+  .hero .role{
+    font-family:var(--display);font-weight:600;font-size:18px;color:var(--blue);
+    margin-top:14px;
+  }
+  .hero p.intro{color:var(--grey);margin-top:20px;max-width:520px;font-size:16px;}
+  .hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--display);font-weight:700;font-size:14px;
+    padding:13px 24px;border-radius:9px;transition:all .2s ease;
+    display:inline-flex;align-items:center;gap:8px;border:none;
+  }
+  .btn-primary{background:var(--navy);color:#fff;border:1px solid var(--navy);}
+  .btn-primary:hover{background:var(--blue);border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 20px rgba(29,95,168,0.25);}
+  .btn-outline{background:#fff;color:var(--navy);border:1px solid var(--border);}
+  .btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
+  .btn-sm{font-size:12.5px;padding:8px 14px;border-radius:7px;}
+  .btn-danger{background:#fff;color:var(--danger);border:1px solid #F1D4D0;}
+  .btn-danger:hover{background:#FBEAE8;}
+
+  .hero-visual{display:flex;justify-content:center;align-items:center;}
+  .hero-visual svg{width:100%;max-width:420px;height:auto;}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;}
+  .about-grid p{color:var(--grey);margin-bottom:16px;font-size:15.5px;}
+  .interest-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .interest-tag{
+    font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--navy);
+    background:var(--blue-light);padding:8px 14px;border-radius:20px;
+  }
+  .stat-card{
+    background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);
+    padding:28px;
+  }
+  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .stat-row .stat{border-left:3px solid var(--blue);padding-left:14px;}
+  .stat .num{font-family:var(--display);font-weight:800;font-size:26px;color:var(--navy);}
+  .stat .label{font-size:12.5px;color:var(--grey);margin-top:2px;}
+  @media(max-width:760px){.about-grid,.hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:280px;margin:0 auto 12px;}}
+
+  /* ---------- EDUCATION ---------- */
+  .timeline{position:relative;padding-left:32px;max-width:760px;}
+  .timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1.5px;background:var(--border);}
+  .tl-item{position:relative;padding-bottom:36px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:'';position:absolute;left:-32px;top:4px;width:13px;height:13px;border-radius:50%;
+    background:#fff;border:2.5px solid var(--blue);
+  }
+  .tl-card{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+    padding:22px 24px;box-shadow:var(--shadow);
+  }
+  .tl-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px;}
+  .tl-title{font-family:var(--display);font-weight:700;font-size:16.5px;color:var(--navy);}
+  .tl-date{
+    font-family:var(--display);font-weight:700;font-size:12px;color:var(--blue);
+    background:var(--blue-light);padding:4px 12px;border-radius:20px;white-space:nowrap;
+  }
+  .tl-card p{color:var(--grey);font-size:14.5px;margin-top:4px;}
+  .tl-card p.org{color:var(--ink);font-weight:600;font-size:14.5px;margin-top:2px;}
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .skill-card{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+    padding:26px;box-shadow:var(--shadow);
+  }
+  .skill-card h3{
+    font-family:var(--display);font-weight:700;font-size:15px;color:var(--navy);
+    margin-bottom:16px;display:flex;align-items:center;gap:10px;
+  }
+  .skill-icon{
+    width:34px;height:34px;border-radius:8px;background:var(--blue-light);
+    display:flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0;
+  }
+  .badge-list{display:flex;flex-wrap:wrap;gap:8px;}
+  .badge{
+    font-size:13px;color:var(--ink);background:var(--bg-alt);border:1px solid var(--border);
+    padding:6px 12px;border-radius:8px;font-weight:500;display:inline-flex;align-items:center;gap:6px;
+  }
+  .badge .rm{color:var(--danger);cursor:pointer;font-weight:800;line-height:1;}
+  @media(max-width:860px){.skills-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.skills-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PROJECTS ---------- */
+  .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .proj-card{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+    padding:28px;display:flex;flex-direction:column;gap:14px;
+    box-shadow:var(--shadow);transition:transform .2s ease, border-color .2s ease;position:relative;
+  }
+  .proj-card:hover{transform:translateY(-4px);border-color:var(--blue);}
+  .proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  .proj-top h3{font-family:var(--display);font-weight:700;font-size:17.5px;color:var(--navy);}
+  .proj-card p.desc{color:var(--grey);font-size:14.5px;}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+  .proj-tag{font-size:12px;font-weight:600;color:var(--blue);background:var(--blue-light);padding:4px 10px;border-radius:6px;}
+  .proj-actions{display:flex;gap:10px;margin-top:auto;padding-top:6px;flex-wrap:wrap;}
+  .proj-btn{
+    font-family:var(--display);font-size:12.5px;font-weight:700;color:var(--navy);
+    border:1px solid var(--border);padding:8px 14px;border-radius:7px;
+    display:flex;align-items:center;gap:6px;transition:border-color .2s, color .2s;background:#fff;
+  }
+  .proj-btn:hover{border-color:var(--blue);color:var(--blue);}
+  @media(max-width:820px){.projects-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CERTIFICATIONS ---------- */
+  .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .cert-card{
+    background:#fff;border:1px dashed var(--border);border-radius:var(--radius);
+    padding:24px;box-shadow:var(--shadow);position:relative;
+  }
+  .cert-card h4{font-family:var(--display);font-weight:700;font-size:15px;color:var(--navy);margin-bottom:6px;}
+  .cert-card p{font-size:13.5px;color:var(--grey);margin-top:2px;}
+  .cert-card .cert-link{
+    display:inline-block;margin-top:12px;font-size:12.5px;font-weight:700;color:var(--blue);
+  }
+  @media(max-width:860px){.cert-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.cert-grid{grid-template-columns:1fr;}}
+
+  /* ---------- ACHIEVEMENTS ---------- */
+  .achieve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .achieve-card{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+    padding:24px;display:flex;gap:16px;box-shadow:var(--shadow);position:relative;
+  }
+  .achieve-icon{
+    width:42px;height:42px;border-radius:10px;background:var(--blue-light);color:var(--blue);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .achieve-card h4{font-family:var(--display);font-weight:700;font-size:15.5px;color:var(--navy);}
+  .achieve-card p{font-size:13.5px;color:var(--grey);margin-top:4px;}
+  @media(max-width:700px){.achieve-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PAPER PRESENTATION ---------- */
+  .paper-card{
+    background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);
+    padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px;position:relative;
+  }
+  .paper-card h3{font-family:var(--display);font-weight:700;font-size:19px;color:var(--navy);margin-bottom:6px;}
+  .paper-card .tagline{color:var(--blue);font-weight:600;font-size:13.5px;margin-bottom:16px;}
+  .paper-meta dt{font-family:var(--display);font-size:11px;color:var(--grey-light);text-transform:uppercase;letter-spacing:.05em;margin-top:12px;}
+  .paper-meta dt:first-child{margin-top:0;}
+  .paper-meta dd{font-size:14px;color:var(--ink);font-weight:500;margin-top:2px;}
+  @media(max-width:700px){.paper-card{grid-template-columns:1fr;}}
+
+  /* ---------- RESUME CTA ---------- */
+  .resume-cta{
+    background:var(--navy);border-radius:20px;padding:64px 48px;
+    text-align:center;color:#fff;position:relative;overflow:hidden;
+  }
+  .resume-cta::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 20% 20%, rgba(29,95,168,0.35), transparent 45%),
+               radial-gradient(circle at 80% 80%, rgba(29,95,168,0.25), transparent 45%);
+  }
+  .resume-cta > *{position:relative;z-index:1;}
+  .resume-cta h2{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.4vw,32px);margin-bottom:14px;}
+  .resume-cta p{color:#B9C6DA;max-width:520px;margin:0 auto 30px;font-size:15.5px;}
+  .resume-cta .btn-primary{background:#fff;color:var(--navy);border-color:#fff;}
+  .resume-cta .btn-primary:hover{background:var(--blue-light);}
+  .resume-admin-panel{
+    margin:34px auto 0;max-width:460px;background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);border-radius:12px;padding:22px;text-align:left;
+  }
+  .resume-admin-panel h4{font-family:var(--display);font-size:13.5px;margin-bottom:12px;color:#fff;}
+  .resume-admin-panel input[type=text], .resume-admin-panel input[type=file]{
+    width:100%;padding:10px 12px;border-radius:7px;border:1px solid rgba(255,255,255,0.25);
+    background:rgba(255,255,255,0.08);color:#fff;font-size:13px;margin-bottom:10px;
+  }
+  .resume-admin-panel input::placeholder{color:#B9C6DA;}
+  .resume-admin-panel .hint{font-size:11.5px;color:#B9C6DA;margin-top:6px;}
+
+  /* ---------- SOCIAL ---------- */
+  .social-row{display:flex;justify-content:center;gap:20px;margin-top:44px;flex-wrap:wrap;}
+  .social-card{
+    display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--border);
+    border-radius:var(--radius);padding:16px 24px;box-shadow:var(--shadow);
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .social-card:hover{transform:translateY(-3px);border-color:var(--blue);}
+  .social-card .label{font-family:var(--display);font-weight:700;font-size:14px;color:var(--navy);}
+  .social-card .url{font-size:12.5px;color:var(--grey);}
+  .social-icon{width:38px;height:38px;border-radius:9px;background:var(--blue-light);color:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;}
+  .contact-info h3{font-family:var(--display);font-weight:800;font-size:20px;color:var(--navy);margin-bottom:18px;}
+  .info-row{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .info-icon{
+    width:40px;height:40px;border-radius:10px;background:var(--blue-light);color:var(--blue);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .info-row .label{font-size:12px;color:var(--grey-light);}
+  .info-row .value{font-size:14.5px;font-weight:600;color:var(--ink);}
+  .contact-form{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+    padding:32px;box-shadow:var(--shadow);
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field label{font-size:12.5px;font-weight:600;color:var(--navy);}
+  .field input, .field textarea{
+    border:1px solid var(--border);border-radius:8px;padding:11px 13px;font-size:14px;
+    font-family:var(--body);color:var(--ink);background:var(--bg-alt);
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .field input:focus, .field textarea:focus{border-color:var(--blue);background:#fff;outline:none;}
+  .field textarea{resize:vertical;min-height:110px;}
+  .form-note{font-size:12.5px;color:var(--grey-light);margin-top:12px;}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--border);padding:44px 0 30px;background:var(--bg-alt);
+  }
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+  .footer-brand{font-family:var(--display);font-weight:800;color:var(--navy);font-size:16px;}
+  .footer-role{font-size:13px;color:var(--grey);margin-top:2px;}
+  .footer-links{display:flex;gap:22px;font-size:13.5px;font-weight:600;color:var(--grey);}
+  .footer-links a:hover{color:var(--blue);}
+  .footer-bottom{text-align:center;margin-top:30px;font-size:12.5px;color:var(--grey-light);}
+
+  /* ---------- ADMIN CONTROLS ---------- */
+  .admin-fab{
+    position:fixed;bottom:22px;right:22px;z-index:200;
+    display:flex;align-items:center;gap:8px;
+    background:var(--navy);color:#fff;border:none;
+    padding:12px 18px;border-radius:30px;font-family:var(--display);font-weight:700;font-size:13px;
+    box-shadow:0 8px 24px rgba(11,37,69,0.28);transition:background .2s ease, transform .2s ease;
+  }
+  .admin-fab:hover{background:var(--blue);transform:translateY(-2px);}
+  .admin-fab.on{background:var(--success);}
+  .admin-fab.on:hover{background:#176b46;}
+
+  .admin-add-btn{
+    font-family:var(--display);font-weight:700;font-size:12.5px;color:var(--blue);
+    background:var(--blue-light);border:1px dashed var(--blue);padding:9px 16px;
+    border-radius:8px;display:inline-flex;align-items:center;gap:6px;margin-top:22px;
+    transition:background .2s ease;
+  }
+  .admin-add-btn:hover{background:#DCEAF8;}
+
+  .item-admin-controls{
+    position:absolute;top:14px;right:14px;display:flex;gap:6px;
+  }
+  .icon-btn{
+    width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:#fff;
+    display:flex;align-items:center;justify-content:center;color:var(--grey);transition:.2s;
+  }
+  .icon-btn:hover{border-color:var(--blue);color:var(--blue);}
+  .icon-btn.del:hover{border-color:var(--danger);color:var(--danger);}
+
+  .badge-admin-add{
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .badge-admin-add input{
+    font-size:12.5px;padding:6px 10px;border-radius:8px;border:1px solid var(--border);
+    background:var(--bg-alt);min-width:140px;
+  }
+
+  /* Modal */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(11,37,69,0.5);z-index:300;
+    display:none;align-items:center;justify-content:center;padding:20px;
+    backdrop-filter:blur(2px);
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:#fff;border-radius:16px;max-width:460px;width:100%;
+    padding:30px;box-shadow:0 24px 60px rgba(11,37,69,0.25);
+    max-height:88vh;overflow-y:auto;
+  }
+  .modal-box h3{font-family:var(--display);font-weight:800;font-size:19px;color:var(--navy);margin-bottom:6px;}
+  .modal-box .modal-sub{font-size:13px;color:var(--grey);margin-bottom:20px;}
+  .modal-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+  .modal-field label{font-size:12.5px;font-weight:600;color:var(--navy);}
+  .modal-field input, .modal-field textarea{
+    border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:14px;
+    font-family:var(--body);color:var(--ink);background:var(--bg-alt);
+  }
+  .modal-field input:focus, .modal-field textarea:focus{border-color:var(--blue);outline:none;background:#fff;}
+  .modal-field textarea{min-height:80px;resize:vertical;}
+  .modal-actions{display:flex;gap:10px;margin-top:18px;}
+  .modal-actions .btn{flex:1;justify-content:center;}
+  .modal-error{font-size:12.5px;color:var(--danger);margin-top:8px;display:none;}
+  .modal-error.show{display:block;}
+  .modal-close-x{
+    position:absolute;top:16px;right:16px;background:none;border:none;color:var(--grey-light);
+    font-size:20px;line-height:1;padding:4px;
+  }
+  .modal-box{position:relative;}
+</style>
+</head>
+<body>
+
+<header class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="brand">Naveena <span>K</span></a>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#" class="nav-cta resume-link" id="resumeBtnNav" target="_blank" rel="noopener">Resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-tag">ECE Student · VLSI &amp; RTL Design</div>
+        <h1>Naveena K</h1>
+        <div class="role">ECE Student | VLSI Enthusiast | RTL Design &amp; FPGA</div>
+        <p class="intro">Electronics and Communication Engineering student passionate about VLSI, RTL design, digital electronics, Verilog HDL, and FPGA-based systems. I am developing strong foundations in digital design and semiconductor technologies through hands-on projects and continuous learning.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#" class="btn btn-outline resume-link" id="resumeBtnHero" target="_blank" rel="noopener">Download Resume</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a semiconductor chip with circuit traces">
+          <rect x="130" y="130" width="140" height="140" rx="10" fill="#0B2545"/>
+          <rect x="150" y="150" width="100" height="100" rx="6" fill="#123566"/>
+          <rect x="172" y="172" width="56" height="56" rx="4" fill="#1D5FA8"/>
+          <g stroke="#1D5FA8" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <line x1="130" y1="150" x2="90" y2="150"/>
+            <line x1="130" y1="180" x2="90" y2="180"/>
+            <line x1="130" y1="210" x2="90" y2="210"/>
+            <line x1="130" y1="240" x2="90" y2="240"/>
+            <line x1="270" y1="150" x2="310" y2="150"/>
+            <line x1="270" y1="180" x2="310" y2="180"/>
+            <line x1="270" y1="210" x2="310" y2="210"/>
+            <line x1="270" y1="240" x2="310" y2="240"/>
+            <line x1="150" y1="130" x2="150" y2="90"/>
+            <line x1="180" y1="130" x2="180" y2="90"/>
+            <line x1="210" y1="130" x2="210" y2="90"/>
+            <line x1="240" y1="130" x2="240" y2="90"/>
+            <line x1="150" y1="270" x2="150" y2="310"/>
+            <line x1="180" y1="270" x2="180" y2="310"/>
+            <line x1="210" y1="270" x2="210" y2="310"/>
+            <line x1="240" y1="270" x2="240" y2="310"/>
+          </g>
+          <g fill="#0B2545">
+            <circle cx="90" cy="150" r="4"/><circle cx="90" cy="180" r="4"/>
+            <circle cx="90" cy="210" r="4"/><circle cx="90" cy="240" r="4"/>
+            <circle cx="310" cy="150" r="4"/><circle cx="310" cy="180" r="4"/>
+            <circle cx="310" cy="210" r="4"/><circle cx="310" cy="240" r="4"/>
+            <circle cx="150" cy="90" r="4"/><circle cx="180" cy="90" r="4"/>
+            <circle cx="210" cy="90" r="4"/><circle cx="240" cy="90" r="4"/>
+            <circle cx="150" cy="310" r="4"/><circle cx="180" cy="310" r="4"/>
+            <circle cx="210" cy="310" r="4"/><circle cx="240" cy="310" r="4"/>
+          </g>
+          <path d="M60 340 L100 340 L100 320 L140 320" stroke="#8A93A1" stroke-width="1.5" fill="none" opacity="0.6"/>
+          <path d="M340 60 L300 60 L300 80 L260 80" stroke="#8A93A1" stroke-width="1.5" fill="none" opacity="0.6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap fade-in">
+      <div class="eyebrow">About Me</div>
+      <h2 class="section-title">Getting to know me</h2>
+      <div class="about-grid">
+        <div>
+          <p>I'm <strong>Naveena K</strong>, an enthusiastic Electronics and Communication Engineering student with a growing focus on the <strong>semiconductor and VLSI industry</strong>. I enjoy working at the intersection of hardware and logic — taking a design concept from RTL to a verified, working simulation.</p>
+          <p>My core interests lie in <strong>VLSI design, RTL design, Verilog HDL, digital electronics, FPGA design, and digital system design</strong>. I'm building my knowledge of semiconductor technology through structured coursework combined with independent, hands-on projects.</p>
+          <p>I approach every project methodically — understanding the specification, designing the logic, writing clean RTL, and verifying it thoroughly through simulation before calling it done.</p>
+          <div class="interest-tags">
+            <span class="interest-tag">VLSI Design</span>
+            <span class="interest-tag">RTL Design</span>
+            <span class="interest-tag">Verilog HDL</span>
+            <span class="interest-tag">Digital Electronics</span>
+            <span class="interest-tag">FPGA Design</span>
+            <span class="interest-tag">Digital System Design</span>
+            <span class="interest-tag">Semiconductor Technology</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-row">
+            <div class="stat"><div class="num">7+</div><div class="label">Digital &amp; RTL projects</div></div>
+            <div class="stat"><div class="num">2028</div><div class="label">Expected graduation</div></div>
+            <div class="stat"><div class="num">VTU</div><div class="label">University affiliation</div></div>
+            <div class="stat"><div class="num">89%</div><div class="label">PUC score</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" style="background:var(--bg-alt);">
+    <div class="wrap fade-in">
+      <div class="eyebrow-row">
+        <div>
+          <div class="eyebrow">Education</div>
+          <h2 class="section-title">Academic journey</h2>
+        </div>
+      </div>
+      <p class="section-sub">A steady academic path leading into electronics and communication engineering.</p>
+      <div class="timeline" id="eduList"></div>
+      <button class="admin-add-btn admin-only" data-section="education" onclick="openItemForm('education')">+ Add education milestone</button>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap fade-in">
+      <div class="eyebrow">Technical Skills</div>
+      <h2 class="section-title">What I work with</h2>
+      <p class="section-sub">Core competencies across VLSI, hardware design, programming, and design tools.</p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3><span class="skill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12" rx="1"/><line x1="6" y1="2" x2="6" y2="6"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="18" y1="2" x2="18" y2="6"/><line x1="6" y1="18" x2="6" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="18" y1="18" x2="18" y2="22"/><line x1="2" y1="6" x2="6" y2="6"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="2" y1="18" x2="6" y2="18"/><line x1="18" y1="6" x2="22" y2="6"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="18" y1="18" x2="22" y2="18"/></svg>
+          </span>VLSI &amp; Hardware</h3>
+          <div class="badge-list" id="skillsVlsi"></div>
+          <div class="badge-admin-add admin-only" style="margin-top:14px;">
+            <input type="text" id="newSkillVlsi" placeholder="Add skill...">
+            <button class="icon-btn" onclick="addSkill('vlsi')" title="Add">+</button>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3><span class="skill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </span>Programming</h3>
+          <div class="badge-list" id="skillsProgramming"></div>
+          <div class="badge-admin-add admin-only" style="margin-top:14px;">
+            <input type="text" id="newSkillProgramming" placeholder="Add skill...">
+            <button class="icon-btn" onclick="addSkill('programming')" title="Add">+</button>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3><span class="skill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          </span>Tools &amp; Platforms</h3>
+          <div class="badge-list" id="skillsTools"></div>
+          <div class="badge-admin-add admin-only" style="margin-top:14px;">
+            <input type="text" id="newSkillTools" placeholder="Add tool...">
+            <button class="icon-btn" onclick="addSkill('tools')" title="Add">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" style="background:var(--bg-alt);">
+    <div class="wrap fade-in">
+      <div class="eyebrow">Projects</div>
+      <h2 class="section-title">Featured work</h2>
+      <p class="section-sub">A collection of RTL and digital design projects built and verified through simulation.</p>
+      <div class="projects-grid" id="projectsGrid"></div>
+      <button class="admin-add-btn admin-only" onclick="openItemForm('projects')">+ Add project</button>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="wrap fade-in">
+      <div class="eyebrow">Certifications</div>
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-sub">Add credentials as they're completed.</p>
+      <div class="cert-grid" id="certGrid"></div>
+      <button class="admin-add-btn admin-only" onclick="openItemForm('certifications')">+ Add certification</button>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" style="background:var(--bg-alt);">
+    <div class="wrap fade-in">
+      <div class="eyebrow">Achievements</div>
+      <h2 class="section-title">Achievements</h2>
+      <p class="section-sub">Recognition from technical events, hackathons, workshops, and competitions.</p>
+      <div class="achieve-grid" id="achieveGrid"></div>
+      <button class="admin-add-btn admin-only" onclick="openItemForm('achievements')">+ Add achievement</button>
+    </div>
+  </section>
+
+  <!-- TECHNICAL PAPER PRESENTATION -->
+  <section id="paper">
+    <div class="wrap fade-in">
+      <div class="eyebrow">Technical Paper Presentation</div>
+      <h2 class="section-title" id="paperTitle">Automatic Intelligence Waste Segregation System</h2>
+      <div class="paper-card" id="paperCard"></div>
+      <button class="admin-add-btn admin-only" onclick="openPaperForm()">✎ Edit paper details</button>
+    </div>
+  </section>
+
+  <!-- RESUME CTA -->
+  <section id="resume" style="background:var(--bg-alt);">
+    <div class="wrap fade-in">
+      <div class="resume-cta">
+        <div style="width:56px;height:56px;border-radius:14px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h2>Let's Build the Future of Hardware</h2>
+        <p>Interested in learning more about my skills, projects, and experience? Download my resume to explore my engineering journey.</p>
+        <a href="#" class="btn btn-primary resume-link" id="resumeBtnCta" target="_blank" rel="noopener">Download Resume</a>
+
+        <div class="resume-admin-panel admin-only">
+          <h4>Admin — Update Resume</h4>
+          <input type="text" id="resumeUrlInput" placeholder="Paste resume link (Google Drive / hosted PDF URL)">
+          <input type="file" id="resumeFileInput" accept="application/pdf">
+          <button class="btn btn-sm btn-outline" style="background:#fff;" onclick="saveResume()">Save Resume</button>
+          <div class="hint">Paste a link (recommended) or upload a small PDF directly (stored in this browser). Uploaded files are limited by browser storage — a hosted link is more reliable.</div>
+        </div>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="social-row">
+        <a href="https://github.com/Naveen2006-tech" target="_blank" rel="noopener" class="social-card">
+          <span class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.44-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 015.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16v3.2c0 .31.21.66.79.55A10.51 10.51 0 0023.5 12c0-6.35-5.15-11.5-11.5-11.5z"/></svg>
+          </span>
+          <span><span class="label">GitHub</span><br><span class="url">github.com/Naveen2006-tech</span></span>
+        </a>
+        <a href="https://www.linkedin.com/in/naveenak2006" target="_blank" rel="noopener" class="social-card">
+          <span class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/></svg>
+          </span>
+          <span><span class="label">LinkedIn</span><br><span class="url">linkedin.com/in/naveenak2006</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap fade-in">
+      <div class="eyebrow">Contact</div>
+      <h2 class="section-title">Get in touch</h2>
+      <p class="section-sub">Open to internships, entry-level roles, and collaboration on VLSI, RTL, and digital design projects.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Naveena K</h3>
+          <div class="info-row">
+            <span class="info-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            </span>
+            <span><span class="label">Email</span><br><span class="value">naveenkrishnamurthy2006@gmail.com</span></span>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0122 16.92z"/></svg>
+            </span>
+            <span><span class="label">Phone</span><br><span class="value">+91 81973 08109</span></span>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span><span class="label">Location</span><br><span class="value">Chitradurga, Karnataka, India</span></span>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="field" style="margin-bottom:16px;">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" placeholder="What's this about?" required>
+          </div>
+          <div class="field" style="margin-bottom:20px;">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="Write your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message</button>
+          <p class="form-note" id="formNote">This form is currently for display — connect it to an email service (e.g. Formspree) to receive messages.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-brand">Naveena K</div>
+      <div class="footer-role">ECE Student | VLSI Enthusiast</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/Naveen2006-tech" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/naveenak2006" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:naveenkrishnamurthy2006@gmail.com">Email</a>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">© 2026 Naveena K. All Rights Reserved.</div>
+</footer>
+
+<!-- ADMIN LOGIN / LOGOUT FAB -->
+<button class="admin-fab" id="adminFab" onclick="handleAdminFabClick()">🔒 Admin</button>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<script>
+/* ============ ADMIN AUTH ============
+   NOTE: This is a simple client-side gate for a personal static site — it hides
+   edit controls from visitors but is NOT real security (anyone can read this
+   file's source). Change ADMIN_PASSWORD below to your own before publishing,
+   and never store sensitive data through this panel.
+*/
+const ADMIN_PASSWORD = "Naveena@2026";
+let isAdmin = sessionStorage.getItem('naveena_isAdmin') === 'true';
+
+/* ============ DEFAULT DATA ============ */
+const DEFAULT_DATA = {
+  education: [
+    { title:"B.E. — Electronics and Communication Engineering", date:"Expected 2028", org:"S.J.M Institute of Technology, Chitradurga", sub:"Visvesvaraya Technological University (VTU)" },
+    { title:"Pre-University Course (PUC)", date:"2024", org:"KSEAB", sub:"Score: 89%" },
+    { title:"10th Standard", date:"2022", org:"KSEEB", sub:"Score: 88%" }
+  ],
+  skills: {
+    vlsi: ["VLSI Fundamentals","RTL Design","Digital Electronics","Verilog HDL","FPGA Design"],
+    programming: ["C Programming","Python Programming"],
+    tools: ["Xilinx Vivado","FPGA","Arduino","EasyEDA","KiCad","Tinkercad"]
+  },
+  projects: [
+    { title:"FPGA Transmitter and Receiver Design", desc:"Designed and simulated a transmitter and receiver system using Verilog HDL and FPGA-oriented RTL design concepts.", tags:"Verilog HDL, RTL Design, FPGA, Xilinx Vivado", github:"https://github.com/Naveen2006-tech" },
+    { title:"Master-Slave Flip-Flop", desc:"Designed and simulated a Master-Slave Flip-Flop using Verilog HDL and verified its functionality through simulation.", tags:"Verilog HDL, Digital Electronics, Vivado", github:"https://github.com/Naveen2006-tech" },
+    { title:"Binary to Gray Code Converter", desc:"Implemented a digital Binary-to-Gray Code conversion design using RTL and Verilog concepts.", tags:"Verilog HDL, RTL Design", github:"https://github.com/Naveen2006-tech" },
+    { title:"Binary to BCD Converter", desc:"Designed a Binary-to-BCD conversion module using digital logic and Verilog HDL.", tags:"Verilog HDL, Digital Logic", github:"https://github.com/Naveen2006-tech" },
+    { title:"Digital Clock", desc:"Designed and simulated a digital clock using Verilog HDL and FPGA-oriented RTL design.", tags:"Verilog HDL, FPGA, RTL Design", github:"https://github.com/Naveen2006-tech" },
+    { title:"I²C Master", desc:"Developed an I²C Master RTL design using Verilog HDL, with emphasis on digital communication and state-machine-based design.", tags:"Verilog HDL, State Machines, RTL Design", github:"https://github.com/Naveen2006-tech" },
+    { title:"Traffic Controller", desc:"Designed an intelligent traffic controller using digital logic and FPGA/RTL concepts.", tags:"Verilog HDL, FPGA, Digital Logic", github:"https://github.com/Naveen2006-tech" }
+  ],
+  certifications: [
+    { name:"Certification Name", org:"Organization", date:"Date", link:"" },
+    { name:"Certification Name", org:"Organization", date:"Date", link:"" },
+    { name:"Certification Name", org:"Organization", date:"Date", link:"" }
+  ],
+  achievements: [
+    { title:"2nd Place — Technical Paper Presentation", desc:"Vidustava, S.J.M Institute of Technology" },
+    { title:"Hackathons & Competitions", desc:"Placeholder — add participation and results here." },
+    { title:"Workshops", desc:"Placeholder — add workshops attended here." },
+    { title:"Other Achievements", desc:"Placeholder — add further recognitions here." }
+  ],
+  paper: {
+    title:"Automatic Intelligence Waste Segregation System",
+    tagline:"Technical Paper Presentation",
+    desc:"A technical paper presented on an intelligent, automated approach to waste segregation.",
+    event:"Placeholder — add event name",
+    institution:"Placeholder — add institution",
+    date:"Placeholder — add date",
+    achievement:"Placeholder — add outcome",
+    certLink:""
+  },
+  resume: { url:"" }
+};
+
+let data = loadData();
+
+function loadData(){
+  try{
+    const raw = localStorage.getItem('naveena_portfolio_data');
+    if(raw) return JSON.parse(raw);
+  }catch(e){ console.error('Could not load saved data', e); }
+  return JSON.parse(JSON.stringify(DEFAULT_DATA));
+}
+function saveData(){
+  try{
+    localStorage.setItem('naveena_portfolio_data', JSON.stringify(data));
+  }catch(e){
+    alert('Could not save — your browser storage may be full (this can happen with large uploaded resume files). Try using a resume link instead.');
+  }
+}
+
+/* ============ ICONS (small helpers) ============ */
+const editIcon = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>`;
+const delIcon = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>`;
+
+/* ============ RENDER FUNCTIONS ============ */
+function renderAll(){
+  renderEducation();
+  renderSkills();
+  renderProjects();
+  renderCertifications();
+  renderAchievements();
+  renderPaper();
+  renderResumeLinks();
+  applyAdminVisibility();
+}
+
+function renderEducation(){
+  const el = document.getElementById('eduList');
+  el.innerHTML = data.education.map((item, i) => `
+    <div class="tl-item">
+      <div class="tl-card">
+        <div class="item-admin-controls admin-only">
+          <button class="icon-btn" onclick="openItemForm('education', ${i})" title="Edit">${editIcon}</button>
+          <button class="icon-btn del" onclick="deleteItem('education', ${i})" title="Delete">${delIcon}</button>
+        </div>
+        <div class="tl-top">
+          <div class="tl-title">${escapeHtml(item.title)}</div>
+          <div class="tl-date">${escapeHtml(item.date)}</div>
+        </div>
+        <p class="org">${escapeHtml(item.org)}</p>
+        <p>${escapeHtml(item.sub)}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderSkills(){
+  ['vlsi','programming','tools'].forEach(cat => {
+    const el = document.getElementById('skills' + cat.charAt(0).toUpperCase() + cat.slice(1));
+    el.innerHTML = data.skills[cat].map((s, i) => `
+      <span class="badge">${escapeHtml(s)}${isAdmin ? `<span class="rm" onclick="removeSkill('${cat}', ${i})" title="Remove">×</span>` : ''}</span>
+    `).join('');
+  });
+}
+
+function renderProjects(){
+  const el = document.getElementById('projectsGrid');
+  el.innerHTML = data.projects.map((p, i) => `
+    <div class="proj-card">
+      <div class="item-admin-controls admin-only">
+        <button class="icon-btn" onclick="openItemForm('projects', ${i})" title="Edit">${editIcon}</button>
+        <button class="icon-btn del" onclick="deleteItem('projects', ${i})" title="Delete">${delIcon}</button>
+      </div>
+      <div class="proj-top"><h3>${escapeHtml(p.title)}</h3></div>
+      <p class="desc">${escapeHtml(p.desc)}</p>
+      <div class="proj-tags">${p.tags.split(',').map(t => `<span class="proj-tag">${escapeHtml(t.trim())}</span>`).join('')}</div>
+      <div class="proj-actions">
+        ${p.github ? `<a href="${escapeAttr(p.github)}" target="_blank" rel="noopener" class="proj-btn">GitHub</a>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderCertifications(){
+  const el = document.getElementById('certGrid');
+  el.innerHTML = data.certifications.map((c, i) => `
+    <div class="cert-card">
+      <div class="item-admin-controls admin-only">
+        <button class="icon-btn" onclick="openItemForm('certifications', ${i})" title="Edit">${editIcon}</button>
+        <button class="icon-btn del" onclick="deleteItem('certifications', ${i})" title="Delete">${delIcon}</button>
+      </div>
+      <h4>${escapeHtml(c.name)}</h4>
+      <p>${escapeHtml(c.org)}</p>
+      <p>${escapeHtml(c.date)}</p>
+      ${c.link ? `<a href="${escapeAttr(c.link)}" target="_blank" rel="noopener" class="cert-link">View credential →</a>` : `<span class="cert-link" style="color:var(--grey-light);">No link added</span>`}
+    </div>
+  `).join('');
+}
+
+function renderAchievements(){
+  const el = document.getElementById('achieveGrid');
+  el.innerHTML = data.achievements.map((a, i) => `
+    <div class="achieve-card">
+      <div class="item-admin-controls admin-only">
+        <button class="icon-btn" onclick="openItemForm('achievements', ${i})" title="Edit">${editIcon}</button>
+        <button class="icon-btn del" onclick="deleteItem('achievements', ${i})" title="Delete">${delIcon}</button>
+      </div>
+      <div class="achieve-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4zM7 4H3a4 4 0 004 4M17 4h4a4 4 0 01-4 4"/></svg>
+      </div>
+      <div>
+        <h4>${escapeHtml(a.title)}</h4>
+        <p>${escapeHtml(a.desc)}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderPaper(){
+  const p = data.paper;
+  document.getElementById('paperTitle').textContent = p.title;
+  document.getElementById('paperCard').innerHTML = `
+    <div class="item-admin-controls admin-only">
+      <button class="icon-btn" onclick="openPaperForm()" title="Edit">${editIcon}</button>
+    </div>
+    <div>
+      <h3>${escapeHtml(p.title)}</h3>
+      <div class="tagline">${escapeHtml(p.tagline)}</div>
+      <p style="color:var(--grey);font-size:14.5px;">${escapeHtml(p.desc)}</p>
+    </div>
+    <dl class="paper-meta">
+      <dt>Event</dt><dd>${escapeHtml(p.event)}</dd>
+      <dt>Institution</dt><dd>${escapeHtml(p.institution)}</dd>
+      <dt>Date</dt><dd>${escapeHtml(p.date)}</dd>
+      <dt>Achievement</dt><dd>${escapeHtml(p.achievement)}</dd>
+      <dt>Certificate</dt><dd>${p.certLink ? `<a href="${escapeAttr(p.certLink)}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600;">View certificate →</a>` : 'Not added yet'}</dd>
+    </dl>
+  `;
+}
+
+function renderResumeLinks(){
+  const url = data.resume.url || '#';
+  ['resumeBtnNav','resumeBtnHero','resumeBtnCta'].forEach(id => {
+    const btn = document.getElementById(id);
+    btn.href = url;
+    if(url.startsWith('data:')){
+      btn.setAttribute('download','Naveena_K_Resume.pdf');
+    } else {
+      btn.removeAttribute('download');
+    }
+  });
+}
+
+function escapeHtml(str){
+  if(str === undefined || str === null) return '';
+  return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+function escapeAttr(str){ return escapeHtml(str); }
+
+/* ============ ADMIN VISIBILITY ============ */
+function applyAdminVisibility(){
+  document.querySelectorAll('.admin-only').forEach(el => {
+    el.style.display = isAdmin ? '' : 'none';
+  });
+  const fab = document.getElementById('adminFab');
+  fab.textContent = isAdmin ? '🔓 Admin Mode — Logout' : '🔒 Admin';
+  fab.classList.toggle('on', isAdmin);
+}
+
+function handleAdminFabClick(){
+  if(isAdmin){
+    if(confirm('Log out of Admin Mode?')){
+      isAdmin = false;
+      sessionStorage.removeItem('naveena_isAdmin');
+      applyAdminVisibility();
+      renderAll();
+    }
+  } else {
+    openLoginModal();
+  }
+}
+
+/* ============ MODAL SYSTEM ============ */
+const overlay = document.getElementById('modalOverlay');
+const modalBox = document.getElementById('modalBox');
+function closeModal(){ overlay.classList.remove('open'); modalBox.innerHTML=''; }
+overlay.addEventListener('click', (e) => { if(e.target === overlay) closeModal(); });
+
+function openLoginModal(){
+  modalBox.innerHTML = `
+    <button class="modal-close-x" onclick="closeModal()">&times;</button>
+    <h3>Admin Login</h3>
+    <p class="modal-sub">Enter the admin password to edit achievements, projects, and your resume.</p>
+    <div class="modal-field">
+      <label for="adminPwd">Password</label>
+      <input type="password" id="adminPwd" placeholder="Enter admin password">
+    </div>
+    <div class="modal-error" id="loginError">Incorrect password. Try again.</div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="attemptLogin()">Log In</button>
+    </div>
+  `;
+  overlay.classList.add('open');
+  const input = document.getElementById('adminPwd');
+  input.focus();
+  input.addEventListener('keydown', e => { if(e.key === 'Enter') attemptLogin(); });
+}
+
+function attemptLogin(){
+  const val = document.getElementById('adminPwd').value;
+  if(val === ADMIN_PASSWORD){
+    isAdmin = true;
+    sessionStorage.setItem('naveena_isAdmin','true');
+    closeModal();
+    applyAdminVisibility();
+    renderAll();
+  } else {
+    document.getElementById('loginError').classList.add('show');
+  }
+}
+
+/* Field configs per section for the add/edit form */
+const FIELD_CONFIG = {
+  education: [
+    {key:'title', label:'Title', type:'text'},
+    {key:'date', label:'Date / Year', type:'text'},
+    {key:'org', label:'Institution', type:'text'},
+    {key:'sub', label:'Detail (e.g. score, board)', type:'text'}
+  ],
+  projects: [
+    {key:'title', label:'Project title', type:'text'},
+    {key:'desc', label:'Description', type:'textarea'},
+    {key:'tags', label:'Technologies (comma-separated)', type:'text'},
+    {key:'github', label:'GitHub link', type:'text'}
+  ],
+  certifications: [
+    {key:'name', label:'Certification name', type:'text'},
+    {key:'org', label:'Organization', type:'text'},
+    {key:'date', label:'Date', type:'text'},
+    {key:'link', label:'Credential link', type:'text'}
+  ],
+  achievements: [
+    {key:'title', label:'Achievement title', type:'text'},
+    {key:'desc', label:'Details', type:'textarea'}
+  ]
+};
+
+function openItemForm(section, index){
+  if(!isAdmin) return;
+  const isEdit = index !== undefined;
+  const item = isEdit ? data[section][index] : {};
+  const fields = FIELD_CONFIG[section];
+  modalBox.innerHTML = `
+    <button class="modal-close-x" onclick="closeModal()">&times;</button>
+    <h3>${isEdit ? 'Edit' : 'Add'} ${sectionLabel(section)}</h3>
+    <p class="modal-sub">${isEdit ? 'Update the details below.' : 'Fill in the details to add a new entry.'}</p>
+    <form id="itemForm">
+      ${fields.map(f => `
+        <div class="modal-field">
+          <label for="f_${f.key}">${f.label}</label>
+          ${f.type === 'textarea'
+            ? `<textarea id="f_${f.key}">${escapeHtml(item[f.key] || '')}</textarea>`
+            : `<input type="text" id="f_${f.key}" value="${escapeAttr(item[f.key] || '')}">`}
+        </div>
+      `).join('')}
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button>
+        <button type="submit" class="btn btn-primary">${isEdit ? 'Save Changes' : 'Add'}</button>
+      </div>
+    </form>
+  `;
+  overlay.classList.add('open');
+  document.getElementById('itemForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const newItem = {};
+    fields.forEach(f => { newItem[f.key] = document.getElementById('f_' + f.key).value.trim(); });
+    if(isEdit){ data[section][index] = newItem; }
+    else { data[section].push(newItem); }
+    saveData();
+    closeModal();
+    renderAll();
+  });
+}
+
+function sectionLabel(section){
+  return { education:'education milestone', projects:'project', certifications:'certification', achievements:'achievement' }[section] || section;
+}
+
+function deleteItem(section, index){
+  if(!isAdmin) return;
+  if(confirm('Delete this entry? This cannot be undone.')){
+    data[section].splice(index, 1);
+    saveData();
+    renderAll();
+  }
+}
+
+function addSkill(cat){
+  if(!isAdmin) return;
+  const input = document.getElementById('newSkill' + cat.charAt(0).toUpperCase() + cat.slice(1));
+  const val = input.value.trim();
+  if(!val) return;
+  data.skills[cat].push(val);
+  input.value = '';
+  saveData();
+  renderSkills();
+}
+function removeSkill(cat, index){
+  if(!isAdmin) return;
+  data.skills[cat].splice(index, 1);
+  saveData();
+  renderSkills();
+}
+
+function openPaperForm(){
+  if(!isAdmin) return;
+  const p = data.paper;
+  const fields = [
+    {key:'title', label:'Paper title', type:'text'},
+    {key:'tagline', label:'Tagline (e.g. Technical Paper Presentation)', type:'text'},
+    {key:'desc', label:'Short description', type:'textarea'},
+    {key:'event', label:'Event', type:'text'},
+    {key:'institution', label:'Institution', type:'text'},
+    {key:'date', label:'Date', type:'text'},
+    {key:'achievement', label:'Achievement / outcome', type:'text'},
+    {key:'certLink', label:'Certificate link', type:'text'}
+  ];
+  modalBox.innerHTML = `
+    <button class="modal-close-x" onclick="closeModal()">&times;</button>
+    <h3>Edit Paper Presentation</h3>
+    <p class="modal-sub">Update the technical paper presentation details.</p>
+    <form id="paperForm">
+      ${fields.map(f => `
+        <div class="modal-field">
+          <label for="pf_${f.key}">${f.label}</label>
+          ${f.type === 'textarea'
+            ? `<textarea id="pf_${f.key}">${escapeHtml(p[f.key] || '')}</textarea>`
+            : `<input type="text" id="pf_${f.key}" value="${escapeAttr(p[f.key] || '')}">`}
+        </div>
+      `).join('')}
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+    </form>
+  `;
+  overlay.classList.add('open');
+  document.getElementById('paperForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    fields.forEach(f => { data.paper[f.key] = document.getElementById('pf_' + f.key).value.trim(); });
+    saveData();
+    closeModal();
+    renderAll();
+  });
+}
+
+function saveResume(){
+  if(!isAdmin) return;
+  const urlVal = document.getElementById('resumeUrlInput').value.trim();
+  const fileInput = document.getElementById('resumeFileInput');
+  const file = fileInput.files[0];
+
+  if(file){
+    if(file.size > 3 * 1024 * 1024){
+      alert('That PDF is larger than 3MB — browser storage may not be able to hold it. Please use a hosted link (Google Drive, etc.) instead.');
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      data.resume.url = reader.result;
+      saveData();
+      renderResumeLinks();
+      alert('Resume file saved.');
+      fileInput.value = '';
+    };
+    reader.readAsDataURL(file);
+  } else if(urlVal){
+    data.resume.url = urlVal;
+    saveData();
+    renderResumeLinks();
+    alert('Resume link saved.');
+  } else {
+    alert('Please paste a link or choose a PDF file to upload.');
+  }
+}
+
+/* ============ NAV / SCROLL / MISC (unchanged behaviour) ============ */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 8);
+});
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+const form = document.getElementById('contactForm');
+const note = document.getElementById('formNote');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  note.textContent = "Thanks — this demo form doesn't send messages yet. Connect it to an email service to go live.";
+  note.style.color = '#1D5FA8';
+});
+
+/* ============ INIT ============ */
+renderAll();
+</script>
+
+</body>
+</html>
